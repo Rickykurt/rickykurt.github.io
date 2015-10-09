@@ -1,0 +1,2 @@
+# rickykurt.github.io
+blog
