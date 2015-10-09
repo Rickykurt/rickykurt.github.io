@@ -1,2 +1,2 @@
 # rickykurt.github.io
-blog
+blog hello world
