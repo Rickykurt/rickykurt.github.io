@@ -154,7 +154,7 @@ SLES:
 
 ###签名
 
-RPM 以及 Debian／Ubuntu 的程序仓库都使用了数字签名来验证程序报的完整性和原始性。下载[ nginx 签名密钥](http://nginx.org/keys/nginx_signing.key)并导入到 rpm 或者 apt 程序中，来检查数字签名：
+RPM 以及 Debian/Ubuntu 的程序仓库都使用了数字签名来验证程序报的完整性和原始性。下载[ nginx 签名密钥](http://nginx.org/keys/nginx_signing.key)并导入到 rpm 或者 apt 程序中，来检查数字签名：
 
 - Debian/Ubuntu:
 > sudo apt-key add nginx_signing.key
