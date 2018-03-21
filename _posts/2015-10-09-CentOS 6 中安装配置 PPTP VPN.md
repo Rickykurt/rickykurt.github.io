@@ -64,6 +64,6 @@ tags : [Linux, CentOS, PPTP, VPN]
 
 -
 
-<p>我的vultr连接<a href="http://www.vultr.com/?ref=6825170">http://www.vultr.com/?ref=6825170</a>
+<p>我的vultr连接<a href="http://www.vultr.com/?ref=6825170">http://www.vultr.com/?ref=6825170</a></p>
 
 <p>{{ page.date | date_to_string }}</p>
