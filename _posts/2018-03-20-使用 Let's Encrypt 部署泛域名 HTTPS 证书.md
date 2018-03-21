@@ -1,3 +1,10 @@
+---
+layout: post
+title: 这个是标题
+date: 2016-04-16 11:11:11.000000000 +09:00
+tags: Let's Encrypt Let'sEncrypt letsencrypt https nginx certbot openssl systemd.timer systemd timer 泛域名 证书
+---
+
 #使用 Let's Encrypt 部署泛域名 HTTPS 证书
 
 部署时间2018-03-20
@@ -205,3 +212,9 @@
    4. 启动 certbot 自动更新
 
       > \# systemctl start certbot-renew
+
+
+
+<p>我的vultr连接<a href="http://www.vultr.com/?ref=6825170">http://www.vultr.com/?ref=6825170</a></p>
+
+<p>{{ page.date | date_to_string }}</p>

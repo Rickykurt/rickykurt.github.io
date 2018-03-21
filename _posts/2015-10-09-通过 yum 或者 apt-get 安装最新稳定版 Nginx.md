@@ -172,6 +172,6 @@ Debian/Ubuntu/SLES 发行版默认会检查数字签名，但是对于 RHEL/Cent
 ### 未翻译部分
 Since our PGP keys and packages are located on the same server, they are equally trusted. It is highly advised to additionally verify the authenticity of the downloaded PGP key. PGP has the “Web of Trust” concept, when a key is signed by someone else’s key, that in turn is signed by another key and so on. It often makes possible to build a chain from an arbitrary key to someone’s key who you know and trust personally, thus verify the authenticity of the first key in a chain. This concept is described in details in GPG Mini Howto. Our keys have enough signatures, and their authenticity is relatively easy to check.
 
-<p>我的vultr连接<a href="http://www.vultr.com/?ref=6825170">http://www.vultr.com/?ref=6825170</a>
+<p>我的vultr连接<a href="http://www.vultr.com/?ref=6825170">http://www.vultr.com/?ref=6825170</a></p>
 
 <p>{{ page.date | date_to_string }}</p>
