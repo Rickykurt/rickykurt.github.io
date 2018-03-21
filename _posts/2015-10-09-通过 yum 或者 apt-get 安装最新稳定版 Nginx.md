@@ -1,14 +1,13 @@
 ---
 layout: default
 title: 通过 yum 或者 apt-get 安装最新稳定版 Nginx
-category:Linux
-tags:Linux Nginx yum apt-get
+category: Linux
+tags: Linux Nginx yum apt-get
 ---
 
 
 
-
-##通过 yum 或者 apt-get 安装最新稳定版 Nginx
+## 通过 yum 或者 apt-get 安装最新稳定版 Nginx
 
 
 目前，nginx 安装包支持如下发行版：
@@ -54,7 +53,7 @@ SLES:
 
 配置 RHEL/CentOS 发行版的 yum ， Debian/Ubuntu 发行版的 apt 以及SLES的 zypper 从而开启 Linux 程序安装包的自动升级
 
-###稳定版预编译包
+### 稳定版预编译包
 
 在下面的列表中选择对应的 nginx-release 包，从而配置 RHEL/CentOS 的 yum 仓库。
 
@@ -156,7 +155,7 @@ SLES:
 
 程序报已经编译了所有的模块，并且不需要任何其他的库以避免额外的依赖关系。
 
-###签名
+### 签名
 
 RPM 以及 Debian/Ubuntu 的程序仓库都使用了数字签名来验证程序报的完整性和原始性。下载[ nginx 签名密钥](http://nginx.org/keys/nginx_signing.key)并导入到 rpm 或者 apt 程序中，来检查数字签名：
 
