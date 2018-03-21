@@ -7,9 +7,6 @@ tags: Linux Nginx yum apt-get
 
 
 
-## 通过 yum 或者 apt-get 安装最新稳定版 Nginx
-
-
 目前，nginx 安装包支持如下发行版：
 
 RHEL/CentOS:
