@@ -1,9 +1,13 @@
 ---
 layout: default
 title: CentOS 6 中安装配置 PPTP VPN
-category : Linux
-tags : [Linux, CentOS, PPTP, VPN]
+category:Linux
+tags:Linux CentOS PPTP VPN
 ---
+
+
+
+
 ## CentOS 6 中安装配置 PPTP VPN
 
 本篇文章主要阐述了在 CentOS 6 上通过yum安装`pptpd`服务来配置 PPTP VPN。

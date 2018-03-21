@@ -1,8 +1,8 @@
 ---
-layout: post
+layout: default
 title: 使用 Let's Encrypt 部署泛域名 HTTPS 证书
-category:Linux
-tags:Let's Encrypt Let'sEncrypt letsencrypt https nginx certbot openssl systemd.timer systemd timer 泛域名 证书
+category: Linux
+tags: Let's Encrypt Let'sEncrypt letsencrypt https nginx certbot openssl systemd.timer systemd timer 泛域名 证书
 ---
 
 
