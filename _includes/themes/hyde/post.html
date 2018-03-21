@@ -25,19 +25,17 @@ layout: default
 
     <hr>
     <div class="pagination">
-      <ul>
       {% if page.previous %}
-        <li class="prev"><a href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Previous</a></li>
+      <a class="pagination-item" href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Previous</a>
       {% else %}
-        <li class="prev disabled"><a>&larr; Previous</a></li>
+        <span class="pagination-item disabled">&larr; Previous</span>
       {% endif %}
-        <li><a href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a></li>
+        <a class="pagination-item" href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a>
       {% if page.next %}
-        <li class="next"><a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next &rarr;</a></li>
+        <a class="pagination-item" href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next &rarr;</a>
       {% else %}
-        <li class="next disabled"><a>Next &rarr;</a>
+        <span class="pagination-item disabled">Next &rarr;</span>
       {% endif %}
-      </ul>
     </div>
     <hr>
     {% include JB/comments %}
