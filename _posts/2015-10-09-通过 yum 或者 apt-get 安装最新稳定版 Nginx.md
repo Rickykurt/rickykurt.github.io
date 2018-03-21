@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: 通过 yum 或者 apt-get 安装最新稳定版 Nginx
 category: Linux
 tags: Linux Nginx yum apt-get

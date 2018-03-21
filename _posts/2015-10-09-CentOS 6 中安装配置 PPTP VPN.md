@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: CentOS 6 中安装配置 PPTP VPN
 category: Linux
 tags: Linux CentOS PPTP VPN
