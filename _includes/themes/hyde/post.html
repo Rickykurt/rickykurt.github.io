@@ -5,8 +5,9 @@ layout: default
 <div class="post">
   <h1 class="post-title">{{ page.title }}</h1>
   <span class="post-date">{{ page.date | date_to_string }}</span>
+  <div>
   {{ content }}
-
+  </div>
   {% unless page.categories == empty %}
     <ul class="tag_box inline">
       <li><i class="icon-folder-open"></i></li>
@@ -30,7 +31,6 @@ layout: default
       {% else %}
         <span class="pagination-item disabled">&larr; Previous</span>
       {% endif %}
-        <!-- <a class="pagination-item" href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a> -->
       {% if page.next %}
         <a class="pagination-item" href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next &rarr;</a>
       {% else %}

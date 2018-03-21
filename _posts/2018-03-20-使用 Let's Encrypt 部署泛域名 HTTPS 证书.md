@@ -187,7 +187,7 @@ tags: Let's Encrypt Let'sEncrypt letsencrypt https nginx certbot openssl systemd
 2. 检查证书是否是泛域名，出现 *.hocyun.cn 即是成功
 
    ```shell
-   $ openssl x509 -in  /etc/letsencrypt/live/hocyun.cn-0001/fullchain.pem -noout -text
+   $ openssl x509 -in /etc/letsencrypt/live/hocyun.cn-0001/fullchain.pem -noout -text
    ```
 
    > X509v3 Subject Alternative Name:
