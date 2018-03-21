@@ -16,7 +16,7 @@ tags: Let's Encrypt Let'sEncrypt letsencrypt https nginx certbot openssl systemd
    查看系统版本
 
    ```shell
-   # cat /etc/redhat-release
+   $ cat /etc/redhat-release
    ```
 
    > CentOS Linux release 7.2.1511 (Core)
@@ -34,14 +34,14 @@ tags: Let's Encrypt Let'sEncrypt letsencrypt https nginx certbot openssl systemd
 4. 如果以前安装过 Certbot 最好执行一下升级。升级后版本是 `0.22.0`
 
    ```shell
-   # yum update certbot-nginx
+   $ yum update certbot-nginx
    ```
 
    如果提示已是最新的话就执行下面的命令
 
    ```shell
-   # yum install certbot-nginx
-   # certbot --version
+   $ yum install certbot-nginx
+   $ certbot --version
    ```
 
    > certbot 0.22.0
@@ -53,8 +53,8 @@ tags: Let's Encrypt Let'sEncrypt letsencrypt https nginx certbot openssl systemd
    必须是1.0.2以上才可以，否则 http2 hsts 等新特性都无法使用
 
    ```shell
-   # yum update openssl
-   # openssl version
+   $ yum update openssl
+   $ openssl version
    ```
 
    > OpenSSL 1.0.2k-fips  26 Jan 2017
@@ -64,13 +64,13 @@ tags: Let's Encrypt Let'sEncrypt letsencrypt https nginx certbot openssl systemd
 6. 最好升级 Nginx 至最新版，老版 Nginx 通过 yum 安装时有可能不是基于 OpenSSL 1.0.2 进行编译的。
 
    ```shell
-   # yum update nginx
+   $ yum update nginx
    ```
 
    出现 built with OpenSSL 1.0.2k-fips  26 Jan 2017 即说明成功。
 
    ```shell
-   # nginx -V
+   $ nginx -V
    ```
 
    > nginx version: nginx/1.12.2
@@ -84,7 +84,7 @@ tags: Let's Encrypt Let'sEncrypt letsencrypt https nginx certbot openssl systemd
 1. 通过 Certbot 申请
 
    ```shell
-   # certbot certonly -d "*.hocyun.cn" -d hocyun.cn --manual --preferred-challenges dns --server https://acme-v02.api.letsencrypt.org/directory
+   $ certbot certonly -d "*.hocyun.cn" -d hocyun.cn --manual --preferred-challenges dns --server https://acme-v02.api.letsencrypt.org/directory
    ```
 
    > Saving debug log to /var/log/letsencrypt/letsencrypt.log
@@ -139,7 +139,11 @@ tags: Let's Encrypt Let'sEncrypt letsencrypt https nginx certbot openssl systemd
    >
    > Press Enter to Continue
 
-   - 给域名添加 TXT 记录，添加一条指向 _acme-challenge.hocyun.cn 的 TXT 记录，值是 gWI1SPVRXNUpsabOrfU0zSwxGiOW9Ai8unmlN7u3gKc 一定要等解析生效再敲回车，查看解析是否生效使用 dig -t txt _acme-challenge.hocyun.cn @8.8.8.8 
+   - 给域名添加 TXT 记录，添加一条指向 _acme-challenge.hocyun.cn 的 TXT 记录，值是 gWI1SPVRXNUpsabOrfU0zSwxGiOW9Ai8unmlN7u3gKc 一定要等解析生效再敲回车，查看解析是否生效使用如下命令：
+
+   ```shell
+   $ dig -t txt _acme-challenge.hocyun.cn @8.8.8.8 
+   ```
 
    > Please deploy a DNS TXT record under the name
    > _acme-challenge.hocyun.cn with the following value:
@@ -181,7 +185,7 @@ tags: Let's Encrypt Let'sEncrypt letsencrypt https nginx certbot openssl systemd
 2. 检查证书是否是泛域名，出现 *.hocyun.cn 即是成功
 
    ```shell
-   # openssl x509 -in  /etc/letsencrypt/live/hocyun.cn-0001/fullchain.pem -noout -text
+   $ openssl x509 -in  /etc/letsencrypt/live/hocyun.cn-0001/fullchain.pem -noout -text
    ```
 
    > X509v3 Subject Alternative Name:
@@ -193,8 +197,8 @@ tags: Let's Encrypt Let'sEncrypt letsencrypt https nginx certbot openssl systemd
 3. 批量替换原 Nginx 配置文件中的证书地址
 
    ```shell
-   # cd /etc/nginx/conf.d
-   # sed -i 's/etc\/letsencrypt\/live\/www.hocyun.cn/etc\/letsencrypt\/live\/hocyun.cn-0001/g' *.conf
+   $ cd /etc/nginx/conf.d
+   $ sed -i 's/etc\/letsencrypt\/live\/www.hocyun.cn/etc\/letsencrypt\/live\/hocyun.cn-0001/g' *.conf
    ```
 
 4. Let's Encrypt 的 HTTPS 证书有效期只有90天，需要在即将到期时手动更新，这里借助 Systemd.timer 以及 Certbot 自动创建的 Systemd 服务进行自动更新（renew||renewal）
@@ -202,7 +206,7 @@ tags: Let's Encrypt Let'sEncrypt letsencrypt https nginx certbot openssl systemd
    1. 查看 certbot 自动更新是否启用
 
       ```shell
-      # systemctl is-enabled certbot-renew.timer
+      $ systemctl is-enabled certbot-renew.timer
       ```
 
       > enabled
@@ -210,13 +214,13 @@ tags: Let's Encrypt Let'sEncrypt letsencrypt https nginx certbot openssl systemd
    2. 启用 certbot 自动更新
 
       ```shell
-      # systemctl enable certbot-renew.timer
+      $ systemctl enable certbot-renew.timer
       ```
 
    3. 查看 certbot 自动更新是否运行
 
       ```shell
-      # systemctl list-timers
+      $ systemctl list-timers
       ```
 
       > NEXT                         LEFT     LAST                         PASSED  UNIT                         ACTIVATES
@@ -231,7 +235,7 @@ tags: Let's Encrypt Let'sEncrypt letsencrypt https nginx certbot openssl systemd
    4. 启动 certbot 自动更新
 
       ```shell
-      # systemctl start certbot-renew
+      $ systemctl start certbot-renew
       ```
 
       ​
