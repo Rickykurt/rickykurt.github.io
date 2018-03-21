@@ -201,7 +201,7 @@ tags: Let's Encrypt Let'sEncrypt letsencrypt https nginx certbot openssl systemd
    $ sed -i 's/etc\/letsencrypt\/live\/www.hocyun.cn/etc\/letsencrypt\/live\/hocyun.cn-0001/g' *.conf
    ```
 
-4. Let's Encrypt 的 HTTPS 证书有效期只有90天，需要在即将到期时手动更新，这里借助 Systemd.timer 以及 Certbot 自动创建的 Systemd 服务进行自动更新（renew||renewal）
+4. Let's Encrypt 的 HTTPS 证书有效期只有90天，需要在即将到期时手动更新，这里借助 Systemd.timer 以及 Certbot 自动创建的 Systemd 服务进行自动更新（renew|renewal）
 
    1. 查看 certbot 自动更新是否启用
 
