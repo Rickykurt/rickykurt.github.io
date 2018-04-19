@@ -17,7 +17,6 @@
       <span class="pagination-item disabled">Next &rarr;</span>
     {% endif %}
   </div>
-  <hr>
   <div class="related">
     <h2>Related Posts</h2>
     <ul class="related-posts">
@@ -41,7 +40,7 @@
       {% include JB/categories_list %}
     </ul>
   {% endunless %}  
-
+  <hr>
   {% unless page.tags == empty %}
   <h2>Tags</h2>
     <ul class="tag_box inline">
@@ -49,10 +48,6 @@
       {% include JB/tags_list %}
     </ul>
   {% endunless %}  
-
-    <hr>
-    
-    {% include JB/comments %}
+  <hr>
+  {% include JB/comments %}
 </div>
-
-
